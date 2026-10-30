@@ -4,13 +4,13 @@
 
 ## Pages
 
-- `pages/index` (entry): 열리면 바로 듣기 시작한다. 첫 발화가 끝나면 질문을 보낸다. 대화 흐름 카드(_current)와 전체 화면(_blank) 모두에서 동작한다. 페이지를 열 때 `question`이 전달되면 듣지 않고 그 질문을 바로 보낸다. 템플 탭(Enter)으로 다시 질문하고, 위/아래로 긴 답변을 스크롤한다. "새 대화"라고 말하면 대화 맥락을 초기화한다.
+- `pages/index` (entry): 열리면 바로 듣기 시작한다. 첫 발화가 끝나면 질문을 보낸다. 대화 흐름 카드(_current)와 전체 화면(_blank) 모두에서 동작한다. 페이지를 열 때 `question`이 전달되면 듣지 않고 그 질문을 바로 보낸다. 템플 탭(Enter) 또는 화면이 열린 상태에서 "Hi Rokid"(onVoiceWakeup)로 다시 질문하고, 위/아래로 긴 답변을 스크롤한다. 대화 흐름 카드(_current)에서는 음성 인식을 시작할 수 없으면 두 번 탭해 전체 화면(_blank)으로 전환하도록 안내하고, 전환되면 바로 듣는다. "새 대화"라고 말하면 대화 맥락을 초기화한다.
 
 ## Capabilities
 
 - Permissions: `RECORD_AUDIO`
 - 음성 인식: `SpeechRecognition` 우선, 안 되면 `SpeechRecognitionSession` + PCM (lib/speech.js → lib/asr.js)
-- 음성 합성: `speechSynthesis` (지원 시)
+- 음성 합성: `speechSynthesis.speak(utterance, 'immediate')` (지원 시, 한국어 전용 voice 없음)
 - 네트워크: `fetch` → `https://rokid-hermes.4ints.com` (`/chat`, `/reset`)
 - 저장소: `wx.setStorageSync` (대화 세션 이름)
 
