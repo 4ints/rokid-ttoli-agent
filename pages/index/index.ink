@@ -18,7 +18,7 @@
 </script>
 
 <script setup>
-import { createRecognizer } from '../../lib/asr.js';
+import { createListener } from '../../lib/speech.js';
 import { ask, resetConversation } from '../../lib/hermes.js';
 import config from '../../config.js';
 
@@ -80,18 +80,13 @@ export default {
     this.cancelSpeech();
     this.setState('listening', { question: '' });
 
-    const voice = createRecognizer({
-      SpeechRecognitionSession: typeof SpeechRecognitionSession === 'undefined' ? null : SpeechRecognitionSession,
-      captureMode: 'wearer',
-      vad: true,
-      lang: config.SPEECH_LANG,
-    });
+    const voice = createListener({ lang: config.SPEECH_LANG });
     this.voice = voice;
-    voice.oninterim = ({ text } = {}) => {
+    voice.oninterim = (text) => {
       if (this.voice === voice && text) this.setData({ question: text });
     };
-    // 첫 번째 발화가 끝나면(VAD 침묵) 바로 질문으로 보낸다.
-    voice.onsegment = ({ text } = {}) => {
+    // 발화가 끝나면 바로 질문으로 보낸다.
+    voice.onfinal = (text) => {
       if (this.voice !== voice || !text) return;
       this.endListening();
       this.submit(text);
