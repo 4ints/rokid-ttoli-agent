@@ -1,0 +1,8 @@
+{
+  "name": "ttoli-agent",
+  "version": "0.1.0",
+  "description": "Rokid Glasses AIUI agent for the hermes agent (똘똘이)",
+  "main": "app.js",
+  "private": true,
+  "dependencies": {}
+}

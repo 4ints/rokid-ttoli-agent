@@ -1,0 +1,16 @@
+{
+  "agentName": "똘똘이",
+  "agentDesc": "개인 AI 비서 똘똘이(hermes agent)와 음성으로 대화한다",
+  "pages": [
+    "pages/index/index"
+  ],
+  "permissions": [
+    "RECORD_AUDIO"
+  ],
+  "window": {
+    "navigationBarTitleText": "똘똘이",
+    "viewport": {
+      "width": "device-width"
+    }
+  }
+}
