@@ -8,7 +8,7 @@ export default {
   SPEECH_LANG: 'ko-KR',
   // 답변을 음성으로 읽을지 여부
   SPEAK_REPLY: true,
-  REQUEST_TIMEOUT_MS: 120000,
+  REQUEST_TIMEOUT_MS: 180000,
   // Cloudflare Access 서비스 토큰. 비어 있으면 헤더를 보내지 않는다.
   CF_ACCESS_CLIENT_ID: '',
   CF_ACCESS_CLIENT_SECRET: '',
