@@ -6,3 +6,7 @@ deploy/
 README.md
 .git/
 .gitignore
+CLAUDE.md
+DEVELOPMENT.md
+scripts/
+.claude/

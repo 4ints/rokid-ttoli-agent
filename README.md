@@ -12,3 +12,7 @@ Rokid Glasses에서 음성으로 개인 AI 비서 "똘똘이"(hermes agent)를 �
 3. Simulator로 확인 → Package AIX → Hi Rokid 앱에서 Update glasses resource
 
 `lib/asr.js`는 [jsar-project/AIUI](https://github.com/jsar-project/AIUI) 샘플(Apache-2.0)을 수정한 것이다.
+
+## 로컬 개발
+
+Windows에서 개발하고 ADB로 안경에 바로 설치하는 방법은 [DEVELOPMENT.md](DEVELOPMENT.md)를 참고.
