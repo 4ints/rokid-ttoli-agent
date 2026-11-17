@@ -1,8 +1,18 @@
 {
   "agentName": "똘똘이",
   "agentDesc": "개인 AI 비서 똘똘이(hermes agent)와 음성으로 대화한다",
+  "agentPrompt": "사용자가 '똘똘이'를 부르거나, 똘똘이에게 묻거나 부탁하거나 전달해 달라고 할 때 이 에이전트를 연다. 예: \"똘똘이 열어줘\", \"똘똘이 불러줘\", \"똘똘이한테 오늘 일정 물어봐\". 사용자가 똘똘이에게 하려는 말이 있으면 그 내용을 question 값으로 그대로 전달한다. Open this agent when the user asks to open Ttoli (똘똘이) or asks Ttoli something.",
   "pages": [
     "pages/index/index"
+  ],
+  "widgets": [
+    {
+      "path": "widgets/ttoli/index",
+      "family": "1x2",
+      "placement": "persistent",
+      "displayName": "똘똘이",
+      "description": "탭하면 바로 똘똘이(개인 AI 비서)에게 음성으로 질문하고 짧은 답을 보여 줍니다."
+    }
   ],
   "permissions": [
     "RECORD_AUDIO"
